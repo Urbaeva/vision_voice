@@ -29,12 +29,12 @@ class _MainScreenState extends State<MainScreen> {
   
   Future<void> _speakWelcomeMessage() async {
     await Future.delayed(const Duration(milliseconds: 500));
-    await flutterTts.speak('Добро пожаловать в Vision Voice. На главном экране доступны три кнопки: Карта, Камера и Микрофон.');
+    await flutterTts.speak('Vision Voice тиркемесине кош келиңиз. Негизги экранда үч баскыч бар: Карта, Камера жана Микрофон.');
   }
   
   void _navigateWithFeedback(BuildContext context, Widget screen, String buttonName) {
     HapticFeedback.heavyImpact(); // Виброотклик при нажатии
-    flutterTts.speak('Открываем $buttonName');
+    flutterTts.speak('$buttonName , ачылууда');
     Navigator.of(context).push(
       MaterialPageRoute(builder: (context) => screen),
     );
@@ -64,7 +64,7 @@ class _MainScreenState extends State<MainScreen> {
             const Padding(
               padding: EdgeInsets.all(24.0),
               child: Text(
-                'Выберите действие',
+                'Кызматты тандаңыз',
                 style: TextStyle(
                   fontSize: 32, 
                   fontWeight: FontWeight.bold,
